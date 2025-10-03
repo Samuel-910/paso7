@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe SSM - Mantenimiento Industrial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #065f46 0%, #10b981 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.3);
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .7;
+            }
+        }
+        
+        .icon-bg {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 min-h-screen">
+    
+    <!-- Header -->
+    <div class="gradient-bg text-white py-12 px-4 shadow-2xl">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center justify-center mb-4">
+                <div class="bg-white/20 backdrop-blur-lg rounded-full p-4 mr-4">
+                    <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold">Informe Técnico SSM</h1>
+                    <p class="text-emerald-100 text-lg mt-2">Aplicación en Gestión de Mantenimiento Industrial</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 py-12">
+        
+        <!-- Paso 1 -->
+        <div class="mb-12 card-hover">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-emerald-100">
+                <div class="bg-gradient-to-r from-emerald-600 to-green-500 p-6 flex items-center">
+                    <div class="step-number text-white font-bold text-3xl w-16 h-16 rounded-full flex items-center justify-center mr-4">1</div>
+                    <h2 class="text-2xl font-bold text-white">Situación No Estructurada</h2>
+                </div>
+                <div class="p-8">
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">La planta enfrenta constantes retrasos en el mantenimiento de maquinaria crítica. Los operarios reportan fallas por WhatsApp, los supervisores priorizan manualmente, y el equipo de mantenimiento no tiene trazabilidad ni alertas preventivas.</p>
+                    
+                    <div class="bg-emerald-50 border-l-4 border-emerald-500 p-6 rounded-r-xl mb-6">
+                        <h3 class="font-semibold text-emerald-900 text-xl mb-3 flex items-center">
+                            <span class="icon-bg rounded-full p-2 mr-3">📋</span>
+                            Ejemplo
+                        </h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><strong class="text-emerald-700">Operario:</strong> Juan Pérez, línea de envasado</li>
+                            <li><strong class="text-emerald-700">Problema:</strong> Reportó una falla en el compresor hace 3 días, aún sin respuesta</li>
+                            <li><strong class="text-emerald-700">Impacto:</strong> Pérdida de producción, sobrecostos, riesgo de incumplimiento de pedidos</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-xl">
+                        <h3 class="font-semibold text-green-900 text-xl mb-3 flex items-center">
+                            <span class="icon-bg rounded-full p-2 mr-3">❓</span>
+                            Preguntas Clave
+                        </h3>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            <li>¿Cómo se reportan y priorizan las fallas actualmente?</li>
+                            <li>¿Qué información se pierde entre operario y mantenimiento?</li>
+                            <li>¿Cómo se mide la eficiencia del mantenimiento?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="mb-12 card-hover">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-emerald-100">
+                <div class="bg-gradient-to-r from-emerald-600 to-green-500 p-6 flex items-center">
+                    <div class="step-number text-white font-bold text-3xl w-16 h-16 rounded-full flex items-center justify-center mr-4">2</div>
+                    <h2 class="text-2xl font-bold text-white">Situación Expresada (Rich Picture)</h2>
+                </div>
+                <div class="p-8">
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6"><strong>Actores:</strong> operarios, supervisores, técnicos de mantenimiento, jefe de planta. <strong>Problemas:</strong> comunicación informal, priorización subjetiva, falta de historial técnico, ausencia de alertas.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-gradient-to-br from-emerald-50 to-green-50 p-6 rounded-xl border-2 border-emerald-200">
+                            <h3 class="font-semibold text-emerald-900 text-lg mb-3 flex items-center">
+                                <span class="text-2xl mr-2">👷</span>
+                                Supervisor
+                            </h3>
+                            <p class="text-gray-700 italic">"Me entero de las fallas por mensajes dispersos, no hay sistema para ver qué está pendiente"</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-emerald-50 to-green-50 p-6 rounded-xl border-2 border-emerald-200">
+                            <h3 class="font-semibold text-emerald-900 text-lg mb-3 flex items-center">
+                                <span class="text-2xl mr-2">🔧</span>
+                                Técnico
+                            </h3>
+                            <p class="text-gray-700 italic">"No sé qué máquinas tienen historial de fallas recurrentes, todo es reactivo"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 3 -->
+        <div class="mb-12 card-hover">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-emerald-100">
+                <div class="bg-gradient-to-r from-emerald-600 to-green-500 p-6 flex items-center">
+                    <div class="step-number text-white font-bold text-3xl w-16 h-16 rounded-full flex items-center justify-center mr-4">3</div>
+                    <h2 class="text-2xl font-bold text-white">Definición de Raíces (Root Definition)</h2>
+                </div>
+                <div class="p-8">
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">Sistema digital de mantenimiento que permita reportes estructurados, priorización automática según criticidad, trazabilidad de intervenciones y generación de alertas preventivas.</p>
+                    
+                    <div class="bg-gradient-to-r from-emerald-600 to-green-500 p-8 rounded-2xl shadow-lg">
+                        <h3 class="font-semibold text-white text-xl mb-4 flex items-center">
+                            <span class="bg-white/20 rounded-full p-2 mr-3">🎯</span>
+                            Root Definition
+                        </h3>
+                        <p class="text-white text-lg leading-relaxed">"Un sistema que permita a Juan reportar fallas desde una app, al supervisor priorizar según impacto, y al técnico recibir tareas con historial técnico y alertas programadas"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 4 -->
+        <div class="mb-12 card-hover">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-emerald-100">
+                <div class="bg-gradient-to-r from-emerald-600 to-green-500 p-6 flex items-center">
+                    <div class="step-number text-white font-bold text-3xl w-16 h-16 rounded-full flex items-center justify-center mr-4">4</div>
+                    <h2 class="text-2xl font-bold text-white">Modelo Conceptual</h2>
+                </div>
+                <div class="p-8">
+                    <div class="mb-8">
+                        <h3 class="font-semibold text-emerald-900 text-xl mb-4 flex items-center">
+                            <span class="icon-bg rounded-full p-2 mr-3">🔄</span>
+                            Flujo Ideal
+                        </h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0 mt-1">1</div>
+                                <p class="text-gray-700 text-lg">Operario reporta falla desde app móvil</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0 mt-1">2</div>
+                                <p class="text-gray-700 text-lg">Sistema clasifica según criticidad y urgencia</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0 mt-1">3</div>
+                                <p class="text-gray-700 text-lg">Técnico recibe tarea con historial</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0 mt-1">4</div>
+                                <p class="text-gray-700 text-lg">Intervención registrada y cerrada</p>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4 flex-shrink-0 mt-1">5</div>
+                                <p class="text-gray-700 text-lg">Dashboard de seguimiento para jefe de planta</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 p-6 rounded-xl">
+                        <h3 class="font-semibold text-green-900 text-xl mb-4 flex items-center">
+                            <span class="icon-bg rounded-full p-2 mr-3">⚙️</span>
+                            Actividades Clave
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-3">
+                            <div class="bg-white p-3 rounded-lg shadow-sm border border-emerald-200">✓ Registro de fallas</div>
+                            <div class="bg-white p-3 rounded-lg shadow-sm border border-emerald-200">✓ Priorización automática</div>
+                            <div class="bg-white p-3 rounded-lg shadow-sm border border-emerald-200">✓ Asignación de tareas</div>
+                            <div class="bg-white p-3 rounded-lg shadow-sm border border-emerald-200">✓ Registro de intervención</div>
+                            <div class="bg-white p-3 rounded-lg shadow-sm border border-emerald-200">✓ Análisis de recurrencia</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 5 -->
+        <div class="mb-12 card-hover">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-emerald-100">
+                <div class="bg-gradient-to-r from-emerald-600 to-green-500 p-6 flex items-center">
+                    <div class="step-number text-white font-bold text-3xl w-16 h-16 rounded-full flex items-center justify-center mr-4">5</div>
+                    <h2 class="text-2xl font-bold text-white">Comparación Modelo vs Realidad</h2>
+                </div>
+                <div class="p-8">
+                    <div class="overflow-x-auto">
+                        <table class="w-full border-collapse">
+                            <thead>
+                                <tr class="bg-emerald-100">
+                                    <th class="p-4 text-left text-emerald-900 font-semibold border-2 border-emerald-200">Aspecto</th>
+                                    <th class="p-4 text-left text-emerald-900 font-semibold border-2 border-emerald-200">Realidad Actual</th>
+                                    <th class="p-4 text-left text-emerald-900 font-semibold border-2 border-emerald-200">Modelo Ideal</th>
+                                    <th class="p-4 text-left text-emerald-900 font-semibold border-2 border-emerald-200">Acción Correctiva</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white hover:bg-emerald-50 transition-colors">
+                                    <td class="p-4 border-2 border-emerald-100 font-semibold text-gray-800">Reporte de fallas</td>
+                                    <td class="p-4 border-2 border-emerald-100 text-gray-700">WhatsApp informal</td>
+                                    <td class="p-4 border-2 border-emerald-100 text-gray-700">App estructurada</td>
+                                    <td class="p-4 border-2 border-emerald-100 text-gray-700">Desarrollar módulo de reporte técnico</td>
+                                </tr>
+                                <tr class="bg-emerald-50 hover:bg-emerald-100 transition-colors">
+                                    <td class="p-4 border-2 border-emerald-100 font-semibold text-gray-800">Priorización</td>
+                                    <td class="p-4 border-2 border-emerald-100 text-gray-700">Manual y subjetiva</td>
+                                    <td class="p-4 border-2 border-emerald-100 text-gray-700">Algoritmo por criticidad</td>
+                                    <td class="p-4 border-2 border-emerald-100 text-gray-700">Implementar lógica de priorización</td>
+                                </tr>
+                                <tr class="bg-white hover:bg-emerald-50 transition-colors">
+                                    <td class="p-4 border-2 border-emerald-100 font-semibold text-gray-800">Trazabilidad</td>
+                                    <td class="p-4 border-2 border-emerald-100 text-gray-700">No existe</td>
+                                    <td class="p-4 border-2 border-emerald-100 text-gray-700">Historial técnico digital</td>
+                                    <td class="p-4 border-2 border-emerald-100 text-gray-700">Crear base de datos de intervenciones</td>
+                                </tr>
+                                <tr class="bg-emerald-50 hover:bg-emerald-100 transition-colors">
+                                    <td class="p-4 border-2 border-emerald-100 font-semibold text-gray-800">Alertas</td>
+                                    <td class="p-4 border-2 border-emerald-100 text-gray-700">No hay</td>
+                                    <td class="p-4 border-2 border-emerald-100 text-gray-700">Alertas preventivas</td>
+                                    <td class="p-4 border-2 border-emerald-100 text-gray-700">Integrar sensores y cronogramas</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 6 -->
+        <div class="mb-12 card-hover">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-emerald-100">
+                <div class="bg-gradient-to-r from-emerald-600 to-green-500 p-6 flex items-center">
+                    <div class="step-number text-white font-bold text-3xl w-16 h-16 rounded-full flex items-center justify-center mr-4">6</div>
+                    <h2 class="text-2xl font-bold text-white">Cambios Deseables y Viables</h2>
+                </div>
+                <div class="p-8">
+                    <div class="space-y-6">
+                        <div class="bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-xl border-l-4 border-red-500">
+                            <h3 class="font-bold text-red-700 text-xl mb-4 flex items-center">
+                                <span class="bg-red-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">!</span>
+                                Alta Prioridad
+                            </h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-emerald-500 mr-2">▸</span>
+                                    <span><strong>App de reporte estructurado</strong> (coste medio, impacto alto)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-emerald-500 mr-2">▸</span>
+                                    <span><strong>Algoritmo de priorización</strong> (coste bajo, impacto alto)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-yellow-50 to-amber-50 p-6 rounded-xl border-l-4 border-yellow-500">
+                            <h3 class="font-bold text-yellow-700 text-xl mb-4 flex items-center">
+                                <span class="bg-yellow-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">◆</span>
+                                Media Prioridad
+                            </h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-emerald-500 mr-2">▸</span>
+                                    <span><strong>Dashboard de seguimiento</strong> (coste medio, impacto medio)</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-emerald-500 mr-2">▸</span>
+                                    <span><strong>Base de datos de historial técnico</strong> (coste medio, impacto medio)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-xl border-l-4 border-blue-500">
+                            <h3 class="font-bold text-blue-700 text-xl mb-4 flex items-center">
+                                <span class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center mr-3">○</span>
+                                Baja Prioridad
+                            </h3>
+                            <ul class="space-y-2 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-emerald-500 mr-2">▸</span>
+                                    <span><strong>Sensores IoT para alertas predictivas</strong> (coste alto, viabilidad baja)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Paso 7 -->
+        <div class="mb-12 card-hover">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-emerald-100">
+                <div class="bg-gradient-to-r from-emerald-600 to-green-500 p-6 flex items-center">
+                    <div class="step-number text-white font-bold text-3xl w-16 h-16 rounded-full flex items-center justify-center mr-4">7</div>
+                    <h2 class="text-2xl font-bold text-white">Acción para Mejorar</h2>
+                </div>
+                <div class="p-8">
+                    <div class="grid md:grid-cols-2 gap-6 mb-8">
+                        <div class="bg-gradient-to-br from-emerald-500 to-green-600 p-6 rounded-2xl shadow-lg text-white">
+                            <h3 class="font-bold text-2xl mb-4 flex items-center">
+                                <span class="bg-white/20 rounded-full p-2 mr-3">🚀</span>
+                                Sprint 1 (Mes 1-2)
+                            </h3>
+                            <p class="text-emerald-100 mb-4 font-semibold">MVP</p>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <span class="mr-2">✓</span>
+                                    App de reporte
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="mr-2">✓</span>
+                                    Priorización automática
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="mr-2">✓</span>
+                                    Registro básico de tareas
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-teal-500 to-emerald-600 p-6 rounded-2xl shadow-lg text-white">
+                            <h3 class="font-bold text-2xl mb-4 flex items-center">
+                                <span class="bg-white/20 rounded-full p-2 mr-3">⚡</span>
+                                Sprint 2 (Mes 3-4)
+                            </h3>
+                            <p class="text-teal-100 mb-4 font-semibold">Funcionalidades Avanzadas</p>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <span class="mr-2">✓</span>
+                                    Dashboard de seguimiento
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="mr-2">✓</span>
+                                    Historial técnico
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="mr-2">✓</span>
+                                    Alertas preventivas
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-emerald-600 to-green-500 p-8 rounded-2xl shadow-lg">
+                        <h3 class="font-bold text-white text-2xl mb-6 flex items-center">
+                            <span class="bg-white/20 rounded-full p-2 mr-3">📊</span>
+                            Métricas de Éxito
+                        </h3>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl text-center">
+                                <div class="text-4xl font-bold text-white mb-2">50%</div>
+                                <p class="text-emerald-100">Reducción en tiempo de respuesta</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl text-center">
+                                <div class="text-4xl font-bold text-white mb-2">70%</div>
+                                <p class="text-emerald-100">Satisfacción operativa</p>
+                            </div>
+                            <div class="bg-white/10 backdrop-blur-lg p-6 rounded-xl text-center">
+                                <div class="text-4xl font-bold text-white mb-2">40%</div>
+                                <p class="text-emerald-100">Menos paradas no programadas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="gradient-bg text-white py-8 px-4 text-center">
+        <p class="text-emerald-100">Informe Técnico - Metodología SSM</p>
+        <p class="text-sm text-emerald-200 mt-2">Sistema de Gestión de Mantenimiento Industrial</p>
+    </div>
+
+</body>
+</html>
